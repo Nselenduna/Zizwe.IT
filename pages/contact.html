@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with Zizwe.IT Limited. Questions, beta testing, partnerships—we'd love to hear from you.">
+    <title>Contact Us | ZIZWE.IT</title>
+    
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .form-message {
+            padding: 1rem 1.5rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .form-message ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo-container">
+                <img src="../images/logo.png" alt="Zizwe IT Logo" class="logo">
+                <span class="company-name">ZIZWE.IT</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Get in Touch</h1>
+            <p>Questions, beta testing, partnerships—we'd love to hear from you.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section>
+        <div class="contact-grid">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p><a href="mailto:hello@zizwe.it">hello@zizwe.it</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <h4>Company</h4>
+                    <p>ZIZWE IT LIMITED<br>
+                    United Kingdom</p>
+                </div>
+
+                <div class="contact-item">
+                    <h4>Support</h4>
+                    <p>For Revalidator support, email us at <a href="mailto:hello@zizwe.it">hello@zizwe.it</a> with "Revalidator Support" in the subject line.</p>
+                </div>
+
+                <div class="contact-item">
+                    <h4>Beta Testing</h4>
+                    <p>Interested in beta testing OrderEase or StockEase? Mention it in the contact form and we'll add you to our beta tester list.</p>
+                </div>
+
+                <div class="contact-item">
+                    <h4>Response Time</h4>
+                    <p>We typically respond within 24-48 hours on business days. Lloyd personally reads and responds to every message.</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="business">Business Name (optional)</label>
+                        <input type="text" id="business" name="business">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product">What are you interested in?</label>
+                        <select id="product" name="product">
+                            <option value="">Select a product (optional)</option>
+                            <option value="revalidator">Revalidator</option>
+                            <option value="orderease">OrderEase (Beta Testing)</option>
+                            <option value="stockease">StockEase (Beta Testing)</option>
+                            <option value="ezethu">Ezethu izitori</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="support">Support</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" required placeholder="Tell us how we can help..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">
+                    * Required fields. We'll never share your information with third parties. See our <a href="privacy-policy.html">Privacy Policy</a>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alternative Contact Methods -->
+    <section class="alt-bg">
+        <div class="container" style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <h2>Other Ways to Connect</h2>
+            <div class="approach-grid">
+                <div class="approach-card">
+                    <h3>Direct Email</h3>
+                    <p>Prefer email? Send us a message directly at <a href="mailto:hello@zizwe.it">hello@zizwe.it</a></p>
+                </div>
+
+                <div class="approach-card">
+                    <h3>Revalidator Support</h3>
+                    <p>Technical issues with Revalidator? Include your device details and a description of the problem in your message.</p>
+                </div>
+
+                <div class="approach-card">
+                    <h3>Media Inquiries</h3>
+                    <p>Press and media inquiries welcome. Please include "Media Inquiry" in your subject line.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="../index.html#approach">Our Philosophy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="products.html#revalidator">Revalidator</a></li>
+                    <li><a href="products.html#orderease">OrderEase (Coming Soon)</a></li>
+                    <li><a href="products.html#stockease">StockEase (Coming Soon)</a></li>
+                    <li><a href="products.html#ezethu">Ezethu izitori (In Development)</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>hello@zizwe.it</p>
+                <p>ZIZWE IT LIMITED</p>
+                <p>United Kingdom</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ZIZWE IT LIMITED. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Pre-fill product selection from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const productParam = urlParams.get('product');
+        if (productParam) {
+            const productSelect = document.getElementById('product');
+            if (productSelect) {
+                productSelect.value = productParam;
+            }
+        }
+    </script>
+</body>
+</html>
