@@ -155,17 +155,29 @@ async function submitForm(data) {
         // Show loading state
         showFormLoading();
 
-        // TODO: Replace with your actual endpoint
-        // Example using FormSubmit.co, Formspree, or your own backend
-        const response = await fetch('YOUR_FORM_ENDPOINT_HERE', {
+        // Get email from config or use default
+        const formEmail = window.SITE_CONFIG?.contactForm?.formsubmitEmail || 'support@zizweit.uk';
+
+        // Using FormSubmit.co for form handling
+        const response = await fetch(`https://formsubmit.co/ajax/${formEmail}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify({
+                name: data.name,
+                email: data.email,
+                business: data.business || 'Not provided',
+                product: data.product || 'General',
+                message: data.message,
+                _subject: `New Contact Form Submission from ${data.name}`
+            })
         });
 
-        if (response.ok) {
+        const result = await response.json();
+
+        if (result.success) {
             showFormSuccess();
             document.querySelector('.contact-form form').reset();
         } else {
@@ -173,7 +185,7 @@ async function submitForm(data) {
         }
     } catch (error) {
         console.error('Form submission error:', error);
-        showFormError('Something went wrong. Please try again or email us directly.');
+        showFormError('Something went wrong. Please try again or email us directly at support@zizweit.uk');
     } finally {
         hideFormLoading();
     }

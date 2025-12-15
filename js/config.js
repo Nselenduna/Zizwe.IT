@@ -60,7 +60,7 @@ const SITE_CONFIG = {
     // Contact Form
     contactForm: {
         // Choose one:
-        formsubmitEmail: "",  // FormSubmit.co - enter your email
+        formsubmitEmail: "support@zizweit.uk",  // FormSubmit.co - enter your email
         formspreeId: "",      // Formspree - enter your form ID
         customEndpoint: ""    // Your own backend API endpoint
     },
