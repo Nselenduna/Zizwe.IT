@@ -171,21 +171,26 @@ async function submitForm(data) {
                 business: data.business || 'Not provided',
                 product: data.product || 'General',
                 message: data.message,
-                _subject: `New Contact Form Submission from ${data.name}`
+                _subject: `ZIZWE.IT Contact: ${data.product || 'General Inquiry'} from ${data.name}`,
+                _template: 'table'
             })
         });
 
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+
         const result = await response.json();
 
-        if (result.success) {
+        if (result.success === "true" || result.success === true) {
             showFormSuccess();
             document.querySelector('.contact-form form').reset();
         } else {
-            throw new Error('Form submission failed');
+            throw new Error(result.message || 'Form submission failed');
         }
     } catch (error) {
         console.error('Form submission error:', error);
-        showFormError('Something went wrong. Please try again or email us directly at support@zizweit.uk');
+        showFormError('Something went wrong. Please email us directly at <a href="mailto:support@zizweit.uk">support@zizweit.uk</a>');
     } finally {
         hideFormLoading();
     }
