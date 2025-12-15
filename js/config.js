@@ -7,7 +7,7 @@ const SITE_CONFIG = {
     // Company Information
     company: {
         name: "ZIZWE IT LIMITED",
-        email: "hello@zizwe.it",
+        email: "support@zizweit.uk",
         country: "United Kingdom",
         companyNumber: "" // Add your company number
     },
@@ -17,7 +17,7 @@ const SITE_CONFIG = {
         revalidator: {
             android: "https://play.google.com/store/apps/details?id=com.revalidator.app",
             ios: "", // Add when iOS version is available
-            support: "support@revalidator.uk"
+            support: "support@zizweit.uk"
         },
         orderease: {
             android: "", // Add when available

@@ -104,7 +104,7 @@ Upload entire folder via FTP/SFTP to your web host
 ### Option 1: FormSubmit.co (Free)
 ```javascript
 // In js/main.js, update submitForm function:
-const response = await fetch('https://formsubmit.co/hello@zizwe.it', {
+const response = await fetch('https://formsubmit.co/support@zizweit.uk', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',

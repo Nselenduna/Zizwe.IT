@@ -360,7 +360,7 @@ Before going live:
 ## 📞 Support
 
 For questions or issues with this codebase:
-- **Email:** hello@zizwe.it
+- **Email:** support@zizweit.uk
 - **Documentation:** This README
 - **Original Developer:** Claude (Anthropic)
 

@@ -24,7 +24,7 @@ Choose ONE method and add your details:
 **Option A - FormSubmit (Easiest):**
 ```javascript
 contactForm: {
-    formsubmitEmail: "hello@zizwe.it",  // Your email
+    formsubmitEmail: "support@zizweit.uk",  // Your email
     formspreeId: "",
     customEndpoint: ""
 }
@@ -100,7 +100,7 @@ vercel
 
 ## Need Help?
 - Read full `README.md` for detailed documentation
-- Email: hello@zizwe.it
+- Email: support@zizweit.uk
 
 ---
 
