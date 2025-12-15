@@ -155,39 +155,25 @@ async function submitForm(data) {
         // Show loading state
         showFormLoading();
 
-        // Get email from config or use default
-        const formEmail = window.SITE_CONFIG?.contactForm?.formsubmitEmail || 'support@zizweit.uk';
+        // Build email body
+        const subject = encodeURIComponent(`ZIZWE.IT Contact: ${data.product || 'General Inquiry'} from ${data.name}`);
+        const body = encodeURIComponent(
+            `Name: ${data.name}\n` +
+            `Email: ${data.email}\n` +
+            `Business: ${data.business || 'Not provided'}\n` +
+            `Interest: ${data.product || 'General'}\n\n` +
+            `Message:\n${data.message}`
+        );
 
-        // Using FormSubmit.co for form handling
-        const response = await fetch(`https://formsubmit.co/ajax/${formEmail}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-                name: data.name,
-                email: data.email,
-                business: data.business || 'Not provided',
-                product: data.product || 'General',
-                message: data.message,
-                _subject: `ZIZWE.IT Contact: ${data.product || 'General Inquiry'} from ${data.name}`,
-                _template: 'table'
-            })
-        });
+        // Open email client with pre-filled message
+        window.location.href = `mailto:support@zizweit.uk?subject=${subject}&body=${body}`;
 
-        if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`);
-        }
-
-        const result = await response.json();
-
-        if (result.success === "true" || result.success === true) {
+        // Show success message
+        setTimeout(() => {
             showFormSuccess();
             document.querySelector('.contact-form form').reset();
-        } else {
-            throw new Error(result.message || 'Form submission failed');
-        }
+        }, 500);
+
     } catch (error) {
         console.error('Form submission error:', error);
         showFormError('Something went wrong. Please email us directly at <a href="mailto:support@zizweit.uk">support@zizweit.uk</a>');
