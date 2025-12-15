@@ -150,36 +150,26 @@ function validateForm(data) {
 }
 
 // Submit Form
-async function submitForm(data) {
-    try {
-        // Show loading state
-        showFormLoading();
+function submitForm(data) {
+    // Build email body
+    const subject = encodeURIComponent(`ZIZWE.IT Contact: ${data.product || 'General Inquiry'} from ${data.name}`);
+    const body = encodeURIComponent(
+        `Name: ${data.name}\n` +
+        `Email: ${data.email}\n` +
+        `Business: ${data.business || 'Not provided'}\n` +
+        `Interest: ${data.product || 'General'}\n\n` +
+        `Message:\n${data.message}`
+    );
 
-        // Build email body
-        const subject = encodeURIComponent(`ZIZWE.IT Contact: ${data.product || 'General Inquiry'} from ${data.name}`);
-        const body = encodeURIComponent(
-            `Name: ${data.name}\n` +
-            `Email: ${data.email}\n` +
-            `Business: ${data.business || 'Not provided'}\n` +
-            `Interest: ${data.product || 'General'}\n\n` +
-            `Message:\n${data.message}`
-        );
+    // Open email client with pre-filled message
+    const mailtoLink = `mailto:support@zizweit.uk?subject=${subject}&body=${body}`;
 
-        // Open email client with pre-filled message
-        window.location.href = `mailto:support@zizweit.uk?subject=${subject}&body=${body}`;
+    // Try to open email client
+    window.open(mailtoLink, '_self');
 
-        // Show success message
-        setTimeout(() => {
-            showFormSuccess();
-            document.querySelector('.contact-form form').reset();
-        }, 500);
-
-    } catch (error) {
-        console.error('Form submission error:', error);
-        showFormError('Something went wrong. Please email us directly at <a href="mailto:support@zizweit.uk">support@zizweit.uk</a>');
-    } finally {
-        hideFormLoading();
-    }
+    // Show success message and reset form
+    showFormSuccess();
+    document.querySelector('.contact-form form').reset();
 }
 
 // Form UI Feedback Functions
